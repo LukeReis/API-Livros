@@ -11,30 +11,23 @@
 
 
 from flask import Flask, jsonify, request
+import json
+
 
 app = Flask(__name__)
 
-livros = [
-    {
-        'id': 1,
-        'titulo': 'Hells Angel - A vida e a época de Sonny Barger e do Hells Angels Motorcycle Club',
-        'autor': 'Sonny Barger'
-    },
-    {
-        'id': 2,
-        'titulo': 'A Guerra dos Tronos - A tormenta de Espadas',
-        'autor': 'George R. R. Martin'
-    },
-    {
-        'id': 3,
-        'titulo': 'King of Thorns',
-        'autor': 'Mark Lawrence'
-    },
-]
+with open("livrojson.json", "r") as arquivo:
+    for linha in arquivo:
+        try:
+            livros = json.load(arquivo)
+        except json.decoder.JSONDecodeError:
+            print('Erro ao decodificar objeto JSON')
 
 # Consultar (todos)
 @app.route('/livros', methods=['GET'])
 def obter_livros():
+    with open ("livrojson.json", "r") as arquivo:
+        livros = json.load(arquivo)
     return jsonify(livros)
 
 
@@ -43,7 +36,7 @@ def obter_livros():
 def obter_livro_por_id(id):
     for livro in livros:
         if livro.get('id') == id:
-            return jsonify(livro)
+            return jsonify(livros)
 
 
 # Editar
