@@ -1,0 +1,107 @@
+[
+    {
+        "id": 1,
+        "titulo": "King of Thorns",
+        "autor": "Mark Lawrence"
+    },
+    {
+        "id": 2,
+        "titulo": "The Name of the Wind",
+        "autor": "Patrick Rothfuss"
+    },
+    {
+        "id": 3,
+        "titulo": "The Lies of Locke Lamora",
+        "autor": "Scott Lynch"
+    },
+    {
+        "id": 4,
+        "titulo": "The Blade Itself",
+        "autor": "Joe Abercrombie"
+    },
+    {
+        "id": 5,
+        "titulo": "The Way of Kings",
+        "autor": "Brandon Sanderson"
+    },
+    {
+        "id": 6,
+        "titulo": "The Final Empire",
+        "autor": "Brandon Sanderson"
+    },
+    {
+        "id": 7,
+        "titulo": "Assassin's Apprentice",
+        "autor": "Robin Hobb"
+    },
+    {
+        "id": 8,
+        "titulo": "The Eye of the World",
+        "autor": "Robert Jordan"
+    },
+    {
+        "id": 9,
+        "titulo": "A Game of Thrones",
+        "autor": "George R.R. Martin"
+    },
+    {
+        "id": 10,
+        "titulo": "The Fellowship of the Ring",
+        "autor": "J.R.R. Tolkien"
+    },
+    {
+        "id": 11,
+        "titulo": "The Two Towers",
+        "autor": "J.R.R. Tolkien"
+    },
+    {
+        "id": 12,
+        "titulo": "The Return of the King",
+        "autor": "J.R.R. Tolkien"
+    },
+    {
+        "id": 13,
+        "titulo": "Dune",
+        "autor": "Frank Herbert"
+    },
+    {
+        "id": 14,
+        "titulo": "Ender's Game",
+        "autor": "Orson Scott Card"
+    },
+    {
+        "id": 15,
+        "titulo": "Neuromancer",
+        "autor": "William Gibson"
+    },
+    {
+        "id": 16,
+        "titulo": "Snow Crash",
+        "autor": "Neal Stephenson"
+    },
+    {
+        "id": 17,
+        "titulo": "The Hitchhiker's Guide to the Galaxy",
+        "autor": "Douglas Adams"
+    },
+    {
+        "id": 18,
+        "titulo": "Foundation",
+        "autor": "Isaac Asimov"
+    },
+    {
+        "id": 19,
+        "titulo": "The Martian",
+        "autor": "Andy Weir"
+    },
+    {
+        "id": 20,
+        "titulo": "The Hunger Games",
+        "autor": "Suzanne Collins"
+    },
+    {
+        "id": 21,
+        "titulo": "Harry Potter and the Philosopher's Stone",
+        "autor": "J.K. Rowling"
+    }
+]
