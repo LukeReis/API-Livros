@@ -1,39 +1,40 @@
-# API RESTful de Livros
-Este é um programa em Python que usa o framework Flask para implementar uma API RESTful para gerenciamento de livros. A API permite criar, editar, excluir e obter informações sobre livros.
+# API Rest de Gerenciamento de Livros
+Este é um programa escrito em Python que implementa uma API RESTful para gerenciamento de livros em formato JSON. A API permite que um cliente faça as seguintes operações:
 
-O programa lê informações sobre os livros de um arquivo JSON chamado "livrojson.json". O arquivo contém uma lista de objetos JSON, onde cada objeto representa um livro e contém informações como título, autor e ID.
+Consultar todos os livros
+Consultar um livro por ID
+Editar um livro por ID
+Incluir um novo livro
+Excluir um livro por ID
+Tecnologias utilizadas
+O programa utiliza a biblioteca Flask para a criação da API RESTful. A biblioteca json é utilizada para lidar com o formato JSON.
 
-Abaixo estão as rotas disponíveis na API e o que cada uma faz:
+# Estrutura do programa
+O programa é composto por uma função principal carregar_livros() que carrega os dados do arquivo JSON "livrojson.json" e os retorna em formato JSON.
 
-# Consultar (todos)
-/livros (Método GET)
+A função obter_livros() é associada à rota "/livros" e permite que o cliente consulte todos os livros da biblioteca.
 
-Retorna todos os livros armazenados no arquivo "livrojson.json" em formato JSON.
+A função obter_livro_por_id(id) é associada à rota "/livros/int:id" e permite que o cliente consulte um livro específico através de seu ID.
 
-# Consultar por ID
-/livros/<int:id> (Método GET)
+A função editar_livro_por_id(id) é associada à rota "/livros/int:id" e permite que o cliente edite um livro específico através de seu ID.
 
-Retorna as informações do livro com o ID especificado no parâmetro <id>. Se não houver um livro com esse ID, retorna um erro 404.
+A função incluir_novo_livro() é associada à rota "/livros" e permite que o cliente inclua um novo livro na biblioteca.
 
-# Editar
-/livros/<int:id> (Método PUT)
+A função excluir_livro(id) é associada à rota "/livros/int:id" e permite que o cliente exclua um livro específico da biblioteca.
 
-Atualiza as informações do livro com o ID especificado no parâmetro <id>. As informações atualizadas são passadas no corpo da requisição em formato JSON. Se não houver um livro com esse ID, retorna um erro 404.
+O programa é executado através da chamada app.run(port=5000, host='localhost', debug=True).
 
-# Criar
-/livros (Método POST)
+# Utilização
+O programa pode ser executado a partir do terminal com o comando python nome_do_arquivo.py. Em seguida, o cliente pode fazer requisições HTTP para a API através de um cliente REST, como o Postman.
 
-Adiciona um novo livro com as informações passadas no corpo da requisição em formato JSON. O ID do livro é gerado automaticamente e adicionado ao arquivo "livrojson.json".
+Para consultar todos os livros, deve-se enviar uma requisição GET para a rota "/livros". Para consultar um livro específico, deve-se enviar uma requisição GET para a rota "/livros/int:id", substituindo <int:id> pelo ID do livro desejado.
 
-# Excluir
-/livros/<int:id> (Método DELETE)
+Para editar um livro, deve-se enviar uma requisição PUT para a rota "/livros/int:id", substituindo <int:id> pelo ID do livro a ser editado e incluindo as informações do livro a serem alteradas no corpo da requisição em formato JSON.
 
-Remove o livro com o ID especificado no parâmetro <id> do arquivo "livrojson.json". Se não houver um livro com esse ID, retorna um erro 404.
+Para incluir um novo livro, deve-se enviar uma requisição POST para a rota "/livros" com as informações do novo livro no corpo da requisição em formato JSON.
 
-# Executando o Programa
-O programa é executado ao chamar o método run do objeto app do Flask. Ao executar o programa, um servidor web é iniciado na porta 5000 do host local.
+Para excluir um livro, deve-se enviar uma requisição DELETE para a rota "/livros/int:id", substituindo <int:id> pelo ID do livro a ser excluído.
 
-Para testar a API, você pode usar ferramentas como o curl ou o Postman. Por exemplo, para obter todos os livros, você pode fazer uma requisição GET para a rota /livros. Para adicionar um novo livro, você pode fazer uma requisição POST para a rota /livros com as informações do livro no corpo da requisição em formato JSON.
-
-# Observação 
-É importante salientar que a implementação não inclui tratamento de autenticação ou autorização, o que pode ser uma preocupação de segurança, caso a API seja exposta na internet ou acesse informações sensíveis.
+# Observações
+O arquivo "livrojson.json" deve estar presente no mesmo diretório do programa.
+A API está configurada para executar na porta 5000 e no endereço "localhost", mas essas configurações podem ser alteradas de acordo com a necessidade. O parâmetro "debug=True" permite a exibição de mensagens de debug no terminal.
